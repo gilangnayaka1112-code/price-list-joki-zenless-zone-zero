@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VILLHIZE STORE - Jasa Joki Zenless Zone Zero Profesional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #8B0000;
+            --secondary: #1a1a1a;
+            --accent: #B22222;
+            --text-light: #f5f5f5;
+            --text-dark: #333;
+            --bg-gradient: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 50%, #2a0a0a 100%);
+            --card-bg: rgba(30, 10, 10, 0.8);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(139, 0, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(178, 34, 34, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(139, 0, 0, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(15, 5, 5, 0.95);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(178, 34, 34, 0.7);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 25px;
+        }
+
+        .nav-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent);
+            background-color: rgba(139, 0, 0, 0.2);
+        }
+
+        .nav-menu img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            border-radius: 4px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            text-align: center;
+            background: 
+                linear-gradient(rgba(10, 5, 5, 0.85), rgba(15, 5, 5, 0.9)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%238B0000" stroke-width="0.5" opacity="0.3"/></svg>');
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(139, 0, 0, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(178, 34, 34, 0.15) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            background: linear-gradient(to right, #f5f5f5, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(139, 0, 0, 0.7);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--primary), transparent);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Price List Section */
+        .price-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .price-category {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            transition: var(--transition);
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+
+        .price-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            border-color: var(--accent);
+        }
+
+        .price-category h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .price-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .service-name {
+            flex: 1;
+        }
+
+        .service-price {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: var(--card-bg);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(139, 0, 0, 0.2);
+        }
+
+        .faq-question {
+            padding: 18px 20px;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(178, 34, 34, 0.2));
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.4), rgba(178, 34, 34, 0.3));
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, rgba(30, 10, 10, 0.9), rgba(40, 10, 10, 0.8));
+            border-radius: 15px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-top: 30px;
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 0, 0, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .whatsapp-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-button:hover::before {
+            left: 100%;
+        }
+
+        .whatsapp-button i {
+            margin-right: 10px;
+            font-size: 1.4rem;
+        }
+
+        .warning-note {
+            margin-top: 20px;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(178, 34, 34, 0.2), rgba(139, 0, 0, 0.2));
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #0a0a0a, #1a0a0a);
+            padding: 40px 0 20px;
+            text-align: center;
+            border-top: 1px solid rgba(139, 0, 0, 0.3);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(178, 34, 34, 0.7);
+        }
+
+        .footer-text {
+            max-width: 600px;
+            margin-bottom: 30px;
+            color: #aaa;
+        }
+
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Animasi */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .price-categories {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background: linear-gradient(135deg, rgba(15, 5, 5, 0.95), rgba(25, 5, 5, 0.95));
+                width: 80%;
+                max-width: 300px;
+                height: calc(100vh - 70px);
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+                padding-top: 20px;
+                backdrop-filter: blur(10px);
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 0;
+                width: 100%;
+            }
+            
+            .nav-menu a {
+                padding: 15px 20px;
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .hero {
+                padding: 140px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-section {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .price-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .price-category {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">VILLHIZE <span>STORE</span></a>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#"><i class="fas fa-home"></i> Beranda</a></li>
+                    <li><a href="#"><i class="fas fa-gamepad"></i> Zenless Zone Zero</a></li>
+                    <li><a href="#"><i class="fas fa-wind"></i> Wuthering Waves</a></li>
+                    <li><a href="#"><i class="fas fa-star"></i> Honkai Star Rail</a></li>
+                    <li><a href="#"><i class="fas fa-globe"></i> Genshin Impact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Hallo Para Proxy!! Tingkatkan Pengalaman Bermain Zenless Zone Zero-mu Bersama Villhize Store!</h1>
+                <p>Jasa Joki Game Profesional Aman Murah & Terpercaya</p>
+                <a href="#contact" class="cta-button">Pesan Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price List Section -->
+    <section id="pricing">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Daftar Harga Layanan</h2>
+            </div>
+            <div class="price-categories">
+                <!-- Story Zenless Zone Zero -->
+                <div class="price-category fade-in">
+                    <h3>Story Zenless Zone Zero</h3>
+                    <div class="price-item">
+                        <div class="service-name">Main story</div>
+                        <div class="service-price">RP 20.000/75.000</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="service-name">Story Agent/karakter</div>
+                        <div class="service-price">RP 14.000</div>
+                    </div>
+                </div>
+
+                <!-- Konten Endgame -->
+                <div class="price-category fade-in">
+                    <h3>Konten Endgame</h3>
+                    <div class="price-item">
+                        <div class="service-name">Hollow zero</div>
+                        <div class="service-price">RP 10.000-20.000</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="service-name">Shiyu defense</div>
+                        <div class="service-price">RP 3.000-20.000</div>
+                    </div>
+                </div>
+
+                <!-- Event -->
+                <div class="price-category fade-in">
+                    <h3>Event</h3>
+                    <div class="price-item">
+                        <div class="service-name">Permanent</div>
+                        <div class="service-price">RP 35.000-45.000</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="service-name">Terbatas</div>
+                        <div class="service-price">PM Only</div>
+                    </div>
+                </div>
+
+                <!-- Perawatan Account -->
+                <div class="price-category fade-in">
+                    <h3>Perawatan Account (Daily)</h3>
+                    <div class="price-item">
+                        <div class="service-name">Daily</div>
+                        <div class="service-price">RP 2.000</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="service-name">Weekly</div>
+                        <div class="service-price">RP 10.000</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="service-name">Monthly</div>
+                        <div class="service-price">RP 25.000</div>
+                    </div>
+                </div>
+
+                <!-- Quest HDD -->
+                <div class="price-category fade-in">
+                    <h3>Quest HDD</h3>
+                    <div class="price-item">
+                        <div class="service-name">Explore</div>
+                        <div class="service-price">RP 3.000</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="service-name">Combat</div>
+                        <div class="service-price">RP 4.000</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="service-name">Explore</div>
+                        <div class="service-price">PM Only</div>
+                    </div>
+                </div>
+
+                <!-- Build Agent -->
+                <div class="price-category fade-in">
+                    <h3>Build Agent</h3>
+                    <div class="price-item">
+                        <div class="service-name">Leveling</div>
+                        <div class="service-price">RP 10.000-45.000</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="service-name">Core skill</div>
+                        <div class="service-price">RP 20.000-40.000</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="service-name">Active skill</div>
+                        <div class="service-price">RP 20.000-40.000</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="service-name">W-engine</div>
+                        <div class="service-price">RP 5.000-30.000</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="service-name">Disc</div>
+                        <div class="service-price">RP 30.000-50.000</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="service-name">Full build</div>
+                        <div class="service-price">RP 80.000</div>
+                    </div>
+                </div>
+
+                <!-- Polychrome -->
+                <div class="price-category fade-in">
+                    <h3>Polychrome</h3>
+                    <div class="price-item">
+                        <div class="service-name">Lvl proxy 45 kebawah</div>
+                        <div class="service-price">2.500 per 1 pull</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="service-name">Lvl proxy 45 keatas</div>
+                        <div class="service-price">3.500 per 1 pull</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informasi Pembayaran -->
+    <section id="payment">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Informasi Pembayaran</h2>
+            </div>
+            <div class="payment-info fade-in">
+                <p style="text-align: center; font-size: 1.1rem; margin-bottom: 20px;">
+                    Pembayaran bisa dilakukan melalui QRIS All Payment dan DANA. Untuk nomor pembayaran/QRIS akan diberikan setelah menghubungi nomor admin.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Pertanyaan Umum</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Apakah disini terpercaya?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tentu dong, sudah banyak orderan yang diterima lengkap dengan testimoni, jadi jangan takut yaaa!!</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Berapa lama waktu pengerjaannya min?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kalau itu sih tergantung kondisi akun dan jenis orderan, namun akan diberi info oleh admin atau workernya secara berkala yaaa</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Bisa refund ga min?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Refund bisa dilakukan dengan syarat dan ketentuan yang berlaku. Contoh nya jika akun tidak memadai, ada kesalahan oleh worker dan lain sebagainya</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Login via apa aja bisa kan min?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Bisa dong, menerima login via kuro, google, fb dan lain sebagainya. Data akun tidak akan disalah gunakan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Hubungi Kami</h2>
+            </div>
+            <div class="contact-section fade-in">
+                <div class="contact-info">
+                    <h3>Untuk Memesan Bisa Menghubungi Admin Via WhatsApp</h3>
+                    <p><strong>Nomor Admin:</strong> 0831-7396-1822</p>
+                    <div class="warning-note">
+                        <p><strong>INGAT!</strong> Nomor admin yang real cuma ini satu-satunya, jangan menghubungi nomor yang lain!!!</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/6283173961822" class="whatsapp-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Hubungi Via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">VILLHIZE <span>STORE</span></div>
+                <p class="footer-text">Jasa Joki Game Profesional untuk Zenless Zone Zero. Aman, Murah, dan Terpercaya.</p>
+                <div class="copyright">
+                    &copy; 2025 VILLHIZE STORE. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('.nav-menu').classList.remove('active');
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
